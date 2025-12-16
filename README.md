@@ -1,16 +1,72 @@
-## Hi there 👋 I'm Jenil Khunt
+# Hi 👋, I'm Jenil Khunt
 
-<!--
-**JENILKHUNT99/JENILKHUNT99** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🎓 4th Year Computer Engineering Student  
+💻 Backend Developer  
+🚀 Interested in building scalable and data-driven applications  
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 👨‍💻 About Me
+
+- I am a Computer Engineering student with a strong interest in **Backend Development** and **API design**.
+- I enjoy working with **Python**, **Django**, and **Django REST Framework** to build clean and maintainable systems.
+- I focus on understanding **core concepts** like databases, ORM, REST APIs, and backend architecture.
+- Currently learning **Artificial Intelligence & Machine Learning (AI/ML)** to expand my technical skill set.
+
+---
+
+## 🛠️ Tech Stack
+
+**Backend**
+- Python  
+- Django  
+- Django REST Framework (DRF)  
+- REST APIs  
+
+**Database**
+- SQLite  
+- MySQL  
+- MongoDB (basic)
+
+**AI / ML (Learning)**
+- Python for Data Analysis  
+- Basics of Machine Learning  
+
+**Tools & Others**
+- Git & GitHub  
+- Postman  
+- VS Code  
+
+---
+
+## 📌 Current Focus
+
+- Building backend applications using Django & DRF  
+- Designing clean REST APIs  
+- Learning AI/ML fundamentals alongside backend development  
+
+---
+
+## 🌱 Currently Learning
+
+- Artificial Intelligence & Machine Learning  
+- Data handling with Python  
+- Backend best practices  
+
+---
+
+## 🎯 Career Goal
+
+To become a **strong backend developer** with knowledge of **AI/ML**, and work on real-world, impactful software projects.  
+I aim to continuously learn, build, and improve my problem-solving skills.
+
+---
+
+## 📫 Connect With Me
+
+- GitHub: https://github.com/your-username  
+- LinkedIn: https://www.linkedin.com/in/jenilkhunt
+
+---
+
+⭐ *“Strong fundamentals lead to strong systems.”*
