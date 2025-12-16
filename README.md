@@ -64,7 +64,6 @@ I aim to continuously learn, build, and improve my problem-solving skills.
 
 ## 📫 Connect With Me
 
-- GitHub: https://github.com/your-username  
 - LinkedIn: https://www.linkedin.com/in/jenilkhunt
 
 ---
