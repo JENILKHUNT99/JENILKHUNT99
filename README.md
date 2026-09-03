@@ -2,7 +2,7 @@
 
 **Data Engineer** | Building Scalable Data Pipelines
 
-📍 India | 🎓 Computer Engineering Graduate (2024) | 📧 jenil.khunt.d@gmail.com
+📍 India | 🎓 Computer Engineering Graduate (2026) | 📧 jenil.khunt.d@gmail.com
 
 ---
 
