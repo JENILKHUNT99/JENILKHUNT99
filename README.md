@@ -97,16 +97,15 @@ extracts and validates, **dbt** transforms into a tested star schema in PostgreS
 ### 💻 Languages
 <img src="https://skillicons.dev/icons?i=python&theme=dark" height="48" />
 <p>
-<img src="https://img.shields.io/badge/Python%203.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
 <img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
 <img src="https://img.shields.io/badge/Jinja-B41717?style=for-the-badge&logo=jinja&logoColor=white"/>
 </p>
 
 ### 🔄 Orchestration & Transformation
 <p>
-<img src="https://img.shields.io/badge/Apache%20Airflow%202.9-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"/>
-<img src="https://img.shields.io/badge/dbt%201.8-FF694B?style=for-the-badge&logo=dbt&logoColor=white"/>
-<img src="https://img.shields.io/badge/pandas%202.2-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+<img src="https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"/>
+<img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white"/>
+<img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
 </p>
 
 ### 🗄 Databases & Warehousing
@@ -118,22 +117,8 @@ extracts and validates, **dbt** transforms into a tested star schema in PostgreS
 <img src="https://img.shields.io/badge/ETL%20%2F%20ELT-4B8BBE?style=for-the-badge"/>
 </p>
 
-### ✅ Testing & Code Quality
-<p>
-<img src="https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white"/>
-<img src="https://img.shields.io/badge/pytest--cov-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white"/>
-<img src="https://img.shields.io/badge/Ruff-D7FF64?style=for-the-badge&logo=ruff&logoColor=black"/>
-<img src="https://img.shields.io/badge/dbt%20tests-FF694B?style=for-the-badge&logo=dbt&logoColor=white"/>
-</p>
-
 ### ☁️ DevOps & Cloud
 <img src="https://skillicons.dev/icons?i=docker,git,github,githubactions,aws,linux,vscode&theme=dark" height="48" />
-<p>
-<img src="https://img.shields.io/badge/Docker%20Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-<img src="https://img.shields.io/badge/AWS%20S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white"/>
-<img src="https://img.shields.io/badge/boto3-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white"/>
-<img src="https://img.shields.io/badge/CI%20%2F%20CD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"/>
-</p>
 
 ### 📊 Analytics & Visualization
 <p>
