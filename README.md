@@ -74,38 +74,13 @@ philosophy: "Load raw first, transform in SQL, test everything."
 
 </div>
 
-A **containerized, hourly-orchestrated ELT pipeline** for cryptocurrency market data. Python extracts from
-the CoinGecko API, gates on data quality and loads raw records into PostgreSQL — then **dbt** transforms
-them into a tested star schema, with **Apache Airflow** orchestrating the whole run every hour.
-
-**What's inside**
+A **containerized ELT pipeline** for cryptocurrency market data, orchestrated hourly by Airflow — Python
+extracts and validates, **dbt** transforms into a tested star schema in PostgreSQL.
 
 - 🔁 **4-task Airflow DAG:** `apply_migrations → run_python_etl → dbt_run → dbt_test`
-- 🧊 **Immutable raw snapshots** partitioned by UTC run date/hour, optionally synced to **AWS S3**
-- ⭐ **dbt star schema:** `fact_crypto_prices` joined to `dim_coin`, `dim_category`, `dim_currency`, `dim_date`
-- 🔑 **Deterministic fact keys** (`bitcoin_usd_20250720T100000000000Z`) — reprocessing never duplicates rows
-- 🛡 **Quality gates + `pipeline_runs` audit trail**, with `MIN_VALID_RECORDS` failing the run early
-- 🧱 **Versioned SQL migrations** applied automatically as the first DAG task
-- ✅ **CI on GitHub Actions** running `pytest` and `ruff` on every push and pull request
-- 🐳 **Fully Dockerized** — `docker compose up --build` brings up Airflow and PostgreSQL
-
-**Pipeline architecture**
-
-```mermaid
-flowchart LR
-    API[CoinGecko API] --> EXTRACT[Extract - Python]
-    EXTRACT --> RAW[Raw JSON snapshot]
-    EXTRACT --> VALIDATE[Validate - Python]
-    VALIDATE --> RAWCOINS[(raw_coins)]
-    RAWCOINS --> DBT[Transform - dbt models]
-    DBT --> STAR[(Star schema in PostgreSQL)]
-    RAW -. optional .-> S3[(Amazon S3)]
-    VALIDATE --> AUDIT[(pipeline_runs audit)]
-```
-
-> **ELT over ETL:** the raw data is loaded *before* it is transformed. Python never reshapes the data —
-> it only extracts, gates on quality and loads. Every transformation lives in versioned, tested SQL,
-> so the raw layer can always be replayed without re-hitting the API.
+- ⭐ **dbt star schema:** `fact_crypto_prices` + 4 dimension tables
+- 🔑 **Deterministic fact keys** — reprocessing never duplicates rows
+- 🛡 **Quality gates + audit trail**, with `pytest` and `ruff` in CI
 
 <div align="center">
 <a href="https://github.com/JENILKHUNT99/CryptoCurrency_ETL">
@@ -119,41 +94,66 @@ flowchart LR
 
 <div align="center">
 
-### 🐍 Languages & Databases
-<img src="https://skillicons.dev/icons?i=python,postgres,mysql,sqlite,mongodb,bash&theme=dark" />
-
-### ⚙️ Orchestration & Transformation
+### 💻 Languages
+<img src="https://skillicons.dev/icons?i=python&theme=dark" height="48" />
 <p>
-<img src="https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"/>
-<img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white"/>
-<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+<img src="https://img.shields.io/badge/Python%203.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
+<img src="https://img.shields.io/badge/Jinja-B41717?style=for-the-badge&logo=jinja&logoColor=white"/>
 </p>
 
-### 🗄 Data Modeling & Pipelines
+### 🔄 Orchestration & Transformation
 <p>
-<img src="https://img.shields.io/badge/ETL%20%2F%20ELT-4B8BBE?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Apache%20Airflow%202.9-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"/>
+<img src="https://img.shields.io/badge/dbt%201.8-FF694B?style=for-the-badge&logo=dbt&logoColor=white"/>
+<img src="https://img.shields.io/badge/pandas%202.2-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+</p>
+
+### 🗄 Databases & Warehousing
+<img src="https://skillicons.dev/icons?i=postgres,mysql,sqlite,mongodb&theme=dark" height="48" />
+<p>
 <img src="https://img.shields.io/badge/Star%20Schema-6A5ACD?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Batch%20Processing-2E8B57?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Data%20Quality%20Testing-8A2BE2?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Dimensional%20Modeling-8A2BE2?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/SQL%20Migrations-2E8B57?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/ETL%20%2F%20ELT-4B8BBE?style=for-the-badge"/>
 </p>
 
-### 🌐 Backend & APIs
-<img src="https://skillicons.dev/icons?i=django&theme=dark" />
+### ✅ Testing & Code Quality
 <p>
-<img src="https://img.shields.io/badge/Django%20REST%20Framework-092E20?style=for-the-badge&logo=django&logoColor=white"/>
+<img src="https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white"/>
+<img src="https://img.shields.io/badge/pytest--cov-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white"/>
+<img src="https://img.shields.io/badge/Ruff-D7FF64?style=for-the-badge&logo=ruff&logoColor=black"/>
+<img src="https://img.shields.io/badge/dbt%20tests-FF694B?style=for-the-badge&logo=dbt&logoColor=white"/>
 </p>
 
 ### ☁️ DevOps & Cloud
-<img src="https://skillicons.dev/icons?i=docker,git,github,githubactions,aws,linux,vscode&theme=dark" />
+<img src="https://skillicons.dev/icons?i=docker,git,github,githubactions,aws,linux,vscode&theme=dark" height="48" />
 <p>
-<img src="https://img.shields.io/badge/AWS%20S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white"/>
 <img src="https://img.shields.io/badge/Docker%20Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+<img src="https://img.shields.io/badge/AWS%20S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white"/>
+<img src="https://img.shields.io/badge/boto3-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white"/>
+<img src="https://img.shields.io/badge/CI%20%2F%20CD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"/>
+</p>
+
+### 📊 Analytics & Visualization
+<p>
+<img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
+<img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
+<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
+</p>
+
+### 🌐 Backend & APIs
+<img src="https://skillicons.dev/icons?i=react&theme=dark" height="48" />
+<p>
+<img src="https://img.shields.io/badge/JWT%20Auth-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
+<img src="https://img.shields.io/badge/REST%20APIs-25A162?style=for-the-badge"/>
 </p>
 
 ### 📚 Currently Learning
 <p>
 <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white"/>
 <img src="https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white"/>
+<img src="https://img.shields.io/badge/Streaming%20Architecture-4B8BBE?style=for-the-badge"/>
 </p>
 
 </div>
